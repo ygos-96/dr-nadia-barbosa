@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Otimizações SEO -->
+    <title>Psicóloga Nadia Barbosa | Bem-Estar Emocional e Autoconhecimento</title>
+    <meta name="description"
+        content="Psicóloga Nadia Barbosa oferece terapia humanizada para autoconhecimento, crescimento pessoal e bem-estar emocional. Agende uma consulta.">
+    <meta name="keywords"
+        content="psicóloga, terapia, bem-estar emocional, autoconhecimento, ansiedade, relacionamentos">
+    <meta name="author" content="Nadia Barbosa">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://psicologanadiabarbosa.com.br/">
+    <meta property="og:title" content="Psicóloga Nadia Barbosa | Bem-Estar Emocional e Autoconhecimento">
+    <meta property="og:description"
+        content="Terapia humanizada para autoconhecimento, crescimento pessoal e bem-estar emocional. Agende uma consulta.">
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/fullsimcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#818CF8',
+                        light: '#F5F3FF',
+                        accent: '#A78BFA',
+                        text: '#334155',
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fc .fc-daygrid-day.fc-day-today {
+            background-color: #eef2ff !important;
+        }
+
+        .fc .fc-button-primary {
+            background-color: #4F46E5 !important;
+            border-color: #4F46E5 !important;
+        }
+
+        .fc .fc-button-primary:disabled {
+            background-color: #4F46E5 !important;
+            border-color: #98a0e4 !important;
+        }
+
+        .fc .fc-button-primary:focus {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        /* Cor verde (#28a745) para os dias de outros meses */
+        .fc .fc-daygrid-day.fc-day-other {
+            background-color: #ededf2 !important;
+            color: #085417 !important;
+            font-weight: bold;
+        }
+
+        #horarios button {
+            opacity: 1 !important;
+            filter: none !important;
+        }
+    </style>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .text-highlight {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+
+        .text-highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: -2px;
+            right: -2px;
+            height: 12px;
+            background-color: rgba(167, 139, 250, 0.4);
+            z-index: -1;
+            border-radius: 2px;
+        }
+
+        .cta-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.4);
+        }
+
+
+        .testimonial-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .whatsapp-btn {
+            height: 60px;
+            width: 60px;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.7);
+            }
+
+            50% {
+                box-shadow: 0 0 0 15px rgba(79, 70, 229, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+            }
+        }
+
+        /* Botão Voltar ao Topo */
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 35px;
+            background: #4F46E5;
+            color: white;
+            width: 55px;
+            height: 55px;
+        }
+
+        .back-to-top:hover {
+            background: #4338CA;
+            transform: translateY(-3px);
+        }
+    </style>
+    <style>
+        #calendario {
+            min-height: 500px;
+        }
+
+        .fc .fc-daygrid-day.fc-day-today {
+            background-color: #eef2ff !important;
+        }
+
+        .fc .fc-daygrid-day.fc-day-other {
+            background-color: #f4f4f5 !important;
+            color: #888 !important;
+            font-weight: normal;
+        }
+
+        .fc .fc-daygrid-day.past-date,
+        .fc-day-disabled {
+            background-color: #f9fafb !important;
+            opacity: 0.5;
+            color: #9ca3af !important;
+            pointer-events: none;
+            cursor: not-allowed;
+        }
+
+        .fc-day-selected {
+            background-color: #bbf7d0 !important;
+            color: #4f47e6 !important;
+            font-weight: bold;
+        }
+
+        .horario-bloqueado {
+            background-color: #fee2e2 !important;
+            color: #990000 !important;
+            cursor: not-allowed !important;
+        }
+
+        .horario-selecionado {
+            background-color: #bbf7d0 !important;
+            color: #016624 !important;
+            font-weight: bold;
+        }
+
+        @media (max-width:500px) {
+            .fc .fc-toolbar-title {
+                font-size: 14px !important;
+            }
+            .fc .fc-col-header-cell-cushion {
+                font-size: 12px !important;
+            }
+        }
+    </style>
+
+    <style>
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.3s ease-out;
+        }
+    </style>
+
+</head>
+
+<body class="font-body text-text bg-light">
+    <!-- Botão Voltar ao Topo -->
+    <button class="fixed back-to-top bg-purplue-300 text-white rounded-full shadow-xl z-50 hidden transiton "
+        id="backToTop" aria-label="botão para voltar ao topo da página">
+        <i class="fas fa-arrow-up text-2xl"></i>
+    </button>
+
+    <header>
+        <!-- Navbar -->
+        <nav class="bg-white shadow-lg fixed w-full z-10">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="flex justify-between">
+                    <div class="flex space-x-7">
+                        <div>
+                            <a href="#backToTop" aria-label="Logo da Nadia Barbosa" class="flex items-center py-4 px-2">
+                                <img src="src/arq/img/2.png" width="200" height="100" alt="Logo Psicóloga Nadia Barbosa"
+                                    class="img-logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="#home"
+                            class="py-4 px-2 text-gray-500 hover:text-purple-700 transition duration-30 text-xs lg:text-base"
+                            aria-label="item de menu">Início</a>
+                        <a href="#about"
+                            class="py-4 px-2 text-gray-500 hover:text-purple-700 transition duration-300 text-xs lg:text-base"
+                            aria-label="item de menu">Sobre
+                            Mim</a>
+                        <a href="#services"
+                            class="py-4 px-2 text-gray-500 hover:text-purple-700 transition duration-300 text-xs lg:text-base"
+                            aria-label="item de menu">Serviços</a>
+                        <a href="#depositions"
+                            class="py-4 px-3 text-gray-500 hover:text-purple-700 transition duration-300 text-xs lg:text-base"
+                            aria-label="item de menu">Depoimentos</a>
+                        <a href="#faq"
+                            class="py-4 px-2 text-gray-500 hover:text-purple-700 transition duration-300 text-xs lg:text-base"
+                            aria-label="item de menu">Perguntas
+                            Frequentes</a>
+                        <a href="#scheduling"
+                            class="py-4 px-2 text-gray-500 hover:text-purple-700 transition duration-300 text-xs lg:text-base"
+                            aria-label="item de menu">Agendar
+                            Consulta</a>
+                    </div>
+                    <div class="md:hidden flex items-center">
+                        <button class="outline-none mobile-menu-button" id="mobile-menu-button"
+                            aria-label="botão hamburguer do menu">
+                            <svg class="w-6 h-6 text-gray-500" x-show="!showMenu" fill="none" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                <path d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden mobile-menu" id="mobile-menu">
+                <ul>
+                    <li><a href="#home"
+                            class="block text-sm px-2 py-4 hover:bg-purple-100 transition duration-300">Início</a></li>
+                    <li><a href="#about" class="block text-sm px-2 py-4 hover:bg-purple-100 transition duration-300"
+                            aria-label="item de menu">Sobre
+                            Mim</a></li>
+                    <li><a href="#services" class="block text-sm px-2 py-4 hover:bg-purple-100 transition duration-300"
+                            aria-label="item de menu">Serviços</a></li>
+                    <li><a href="#depositions"
+                            class="block text-sm px-2 py-4 hover:bg-purple-100 transition duration-300"
+                            aria-label="item de menu">Depoimentos</a></li>
+                    <li><a href="#faq" class="block text-sm px-2 py-4 hover:bg-purple-100 transition duration-300"
+                            aria-label="item de menu">Perguntas
+                            Frequentes</a></li>
+                    <li><a href="#scheduling"
+                            class="block text-sm px-2 py-4 hover:bg-purple-100 transition duration-300"
+                            aria-label="item de menu">Agendar Consulta</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Seção Hero -->
+        <section id="home" class="bg-gradient-to-br from-primary to-secondary text-white py-16 md:py-24">
+            <div class="max-w-7xl mt-5 md:mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="md:flex items-center justify-between">
+                    <div class="md:w-1/2 mb-12 md:mb-0">
+                        <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">Descubra seu caminho <span
+                                class="text-highlight">para a autenticidade</span></h1>
+                        <p class="text-xl opacity-90 mb-8">Psicologia humanizada que valoriza sua individualidade e
+                            busca
+                            por autonomia e crescimento</p>
+                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                            <a href="#scheduling"
+                                class="bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg text-center hover:bg-gray-100 transition duration-300 shadow-lg cta-button"
+                                aria-label="botao para agendamento de consulta">Agendar
+                                uma consulta</a>
+                        </div>
+                    </div>
+                    <div class="md:w-2/5 flex justify-center">
+                        <div class="relative">
+                            <div
+                                class="bg-white bg-opacity-20 rounded-full w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
+                                <div
+                                    class="bg-white bg-opacity-10 rounded-full w-56 h-56 md:w-72 md:h-72 flex items-center justify-center">
+                                    <div
+                                        class="bg-gray-200 border-2 border-dashed rounded-full w-48 h-48 md:w-64 md:h-64 flex items-center justify-center text-gray-500">
+                                        <img src="src/arq/img/1.png" class="rounded-full" alt="Psicóloga Nadia Barbosa"
+                                            width="256" height="256">
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="absolute -bottom-5 -right-5 md:-right-0 bg-accent text-purple-600 rounded-full p-5 shadow-xl">
+                                <i class="fas fa-heart text-4xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <div class="md:w-1/2 mb-10 md:mb-0">
+                        <img src="src/arq/img/4.png" width="400" height="500" alt="Dra. Nadia Barbosa - Psicóloga"
+                            class="rounded-lg shadow-xl w-full max-w-sm mx-auto">
+                    </div>
+                    <div class="mt-4 lg:mt-1 md:w-1/1 md:pl-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Sobre Mim</h2>
+                        <div class="h-1 w-20 bg-purple-300 mb-6"></div>
+                        <div class="mb-3">
+                            <h3 class="text-2xl font-bold">Nadia Barbosa</h3>
+                            <p class="text-purple-500">Psicóloga Clínica | Pós-graduada em Neuropsicologia</p>
+                        </div>
+                        <p class="text-gray-600 mb-3">Olá, sou <strong class="text-purple-600">Nadia Barbosa</strong>,
+                            psicóloga clínica com <strong class="text-purple-500">15 anos de formação</strong> e
+                            pós-graduação em <strong class="text-purple-500">Neuropsicologia.</strong></p>
+                        <p class="text-gray-600 mb-3">Pratico uma psicologia sem firulas e sem formalismos excessivos,
+                            mas
+                            sempre com
+                            responsabilidade, ética e <strong class="text-purple-500"> respeito à individualidade de
+                                cada
+                                pessoa.</strong></p>
+                        <p class="text-gray-500 mb-3"> Acredito que o espaço terapêutico deve ser um ambiente de
+                            </strong>liberdade
+                            em que as ideias podem fluir
+                            sem julgamentos ou cobranças, pois só desta forma encontramos nosso caminho para autonomia,
+                            crescimento, realização e prazer.</p>
+                        <p class="text-gray-500 mb-3"> A vida se torna mais leve quando acolhemos nossas emoções,
+                            enfrentamos mudanças com resiliência,
+                            cultivamos <strong class="text-purple-500">relações saudáveis e mantemos o desejo de
+                                aprender</strong> e trocar ideias.
+                            A terapia pode ser uma grande aliada nesse processo.</p>
+                        <p class="text-gray-500 mb-3">Minha atuação é fundamentada na Gestalt-terapia, uma abordagem que
+                            valoriza o vínculo terapêutico, a postura autêntica do psicólogo e um olhar sensível para o
+                            cliente, considerando a interação entre corpo, mente, emoções e o ambiente em que ele está
+                            inserido, incentivando a autoconsciência e responsabilização pelas próprias escolhas.</p>
+                        <p class="text-gray-600 mb-5"> Se você se identifica com essa proposta, entre em contato para
+                            agendarmos uma sessão. Vai ser um
+                            prazer te acompanhar!</p>
+                        <a href="#scheduling"
+                            class="bg-purple-700 hover:bg-primary text-white font-bold py-2 px-6 rounded-full transition duration-300 inline-block"
+                            aria-label="botao para agendamento de consulta">Agende
+                            uma consulta</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Como posso te ajudar?</h2>
+                    <div class="h-1 w-20 bg-purple-400 mx-auto mb-6"></div>
+                    <p class="max-w-2xl mx-auto text-gray-600">Ofereço diversos serviços psicológicos personalizados
+                        para
+                        atender às suas necessidades individuais.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md service-card transition duration-300">
+                        <div class="text-purple-600 mb-4 text-4xl">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Espaço Livre de Julgamentos</h3>
+                        <p class="text-gray-600 mb-4">Crio um ambiente terapêutico onde você pode expressar suas ideias,
+                            emoções e pensamentos sem medo de críticas ou cobranças, facilitando um processo de
+                            autoconhecimento genuíno.</p>
+                        <ul class="text-gray-600 mb-6">
+                            <li class="mb-2 flex items-start">
+                                <i class="fas fa-check text-purple-600 mt-1 mr-2"></i>
+                                <span>Liberdade para explorar suas emoções</span>
+                            </li>
+                            <li class="mb-2 flex items-start">
+                                <i class="fas fa-check text-purple-600 mt-1 mr-2"></i>
+                                <span>Diálogo aberto e acolhedor</span>
+                            </li>
+                            <li class="mb-2 flex items-start">
+                                <i class="fas fa-check text-purple-600 mt-1 mr-2"></i>
+                                <span>Respeito absoluto à sua individualidade</span>
+                            </li>
+                            <li class="mb-2 flex items-start">
+                                <i class="fas fa-check text-purple-600 mt-1 mr-2"></i>
+                                <span>Ambiente seguro para crescimento pessoal</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md service-card transition duration-300">
+                        <div class="text-purple-600 mb-4 text-4xl">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Autonomia e Crescimento</h3>
+                        <p class="text-gray-600 mb-4">Minha abordagem em Gestalt-terapia foca no desenvolvimento da sua
+                            autoconsciência e capacidade de fazer escolhas autênticas, levando a uma vida mais plena e
+                            realizada.</p>
+                        <ul class="text-gray-600 mb-6">
+                            <li class="mb-2 flex items-start">
+                                <i class="fas fa-check text-purple-600 mt-1 mr-2"></i>
+                                <span>Desenvolvimento de autonomia nas decisões</span>
+                            </li>
+                            <li class="mb-2 flex items-start">
+                                <i class="fas fa-check text-purple-600 mt-1 mr-2"></i>
+                                <span>Maior consciência emocional</span>
+                            </li>
+                            <li class="mb-2 flex items-start">
+                                <i class="fas fa-check text-purple-600 mt-1 mr-2"></i>
+                                <span>Fortalecimento da resiliência</span>
+                            </li>
+                            <li class="mb-2 flex items-start">
+                                <i class="fas fa-check text-purple-600 mt-1 mr-2"></i>
+                                <span>Caminho para autenticidade e realização</span>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md service-card transition duration-300">
+                        <div class="text-purple-600 mb-4 text-4xl">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Abordagem Integrada</h3>
+                        <p class="text-gray-600 mb-4">Combinando Gestalt-terapia e Neuropsicologia, trabalho com uma
+                            visão
+                            holística que considera a interação entre sua mente, emoções, corpo e ambiente social.</p>
+                        <ul class="text-gray-600 mb-6">
+                            <li class="mb-2 flex items-start">
+                                <i class="fas fa-check text-purple-600 mt-1 mr-2"></i>
+                                <span>Compreensão integral do seu ser</span>
+                            </li>
+                            <li class="mb-2 flex items-start">
+                                <i class="fas fa-check text-purple-600 mt-1 mr-2"></i>
+                                <span>Foco na relação mente-corpo</span>
+                            </li>
+                            <li class="mb-2 flex items-start">
+                                <i class="fas fa-check text-purple-600 mt-1 mr-2"></i>
+                                <span>Valorização do seu contexto de vida</span>
+                            </li>
+                            <li class="mb-2 flex items-start">
+                                <i class="fas fa-check text-purple-600 mt-1 mr-2"></i>
+                                <span>Abordagem humanizada</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="py-5 flex justify-center items-center">
+                    <a href="#scheduling" class="text-purple-600 font-bold hover:underline inline-flex items-center"
+                        aria-label="botao para agendamento de consulta">Agendar
+                        consulta <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials Section -->
+        <section id="depositions" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Depoimentos</h2>
+                    <div class="h-1 w-20 bg-purple-400 mx-auto mb-6"></div>
+                    <p class="max-w-2xl mx-auto text-gray-600">Veja o que alguns clientes dizem sobre o trabalho da Dra.
+                        Nadia</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="mb-5 bg-gray-50 p-6 rounded-lg shadow-md testimonial-card relative">
+                        <div class="absolute -top-4 -left-4 text-6xl text-blue-100">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="text-gray-700 italic mb-6 relative">"A Dra. Nadia me ajudou a superar minha ansiedade
+                            de
+                            uma maneira que eu nunca imaginei ser possível. Sua abordagem atenciosa e profissional fez
+                            toda
+                            a diferença."</p>
+                        <div class="flex items-center">
+                            <div
+                                class="w-12 h-12 bg-orange-700 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                AF</div>
+                            <div>
+                                <p class="font-bold text-gray-800">Ana Flávia</p>
+                                <small class="text-sm text-gray-600">Paciente há 2 anos</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="mb-5 bg-gray-50 p-6 rounded-lg shadow-md testimonial-card relative">
+                        <div class="absolute -top-4 -left-4 text-6xl text-blue-100">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="text-gray-700 italic mb-6 relative">"Minha filha estava com dificuldades na escola e a
+                            terapia com a Dra. Nadia transformou completamente seu comportamento e autoestima. Sou muito
+                            grata por isso"</p>
+                        <div class="flex items-center">
+                            <div
+                                class="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                CL</div>
+                            <div>
+                                <p class="font-bold text-gray-800">Carla Lopes</p>
+                                <small class="text-sm text-gray-600">Mãe de paciente</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="mb-5 bg-gray-50 p-6 rounded-lg shadow-md testimonial-card relative">
+                        <div class="absolute -top-4 -left-4 text-6xl text-blue-100">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="text-gray-700 italic mb-6 relative">"Estávamos quase desistindo do nosso casamento
+                            quando
+                            procuramos a Dra. Nadia. Hoje renovamos nossas esperanças e encontramos novas formas de nos
+                            relacionar."</p>
+                        <div class="flex items-center">
+                            <div
+                                class="w-12 h-12 bg-purple-700 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                MR</div>
+                            <div>
+                                <p class="font-bold text-gray-800">Marcos e Raquel</p>
+                                <small class="text-sm text-gray-600">Pacientes de terapia de casal</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="mb-5 bg-gray-50 p-6 rounded-lg shadow-md testimonial-card relative">
+                        <div class="absolute -top-4 -left-4 text-6xl text-blue-100">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="text-gray-700 italic mb-6 relative">"Após um período difícil de luto, a terapia com a
+                            Dra.
+                            Nadia me ajudou a encontrar forças para seguir em frente. Sua abordagem sensível fez toda a
+                            diferença."</p>
+                        <div class="flex items-center">
+                            <div
+                                class="w-12 h-12 bg-teal-700 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                PM</div>
+                            <div>
+                                <p class="font-bold text-gray-800">Patrícia Mendes</p>
+                                <small class="text-sm text-gray-600">Paciente há 1 ano</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 5 -->
+                    <div class="mb-5 bg-gray-50 p-6 rounded-lg shadow-md testimonial-card relative">
+                        <div class="absolute -top-4 -left-4 text-6xl text-blue-100">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="text-gray-700 italic mb-6 relative">"Como profissional autônomo, sofria muito com
+                            crises
+                            de ansiedade. A terapia com a Dra. Nadia me ensinou técnicas valiosas para lidar com a
+                            pressão."
+                        </p>
+                        <div class="flex items-center">
+                            <div
+                                class="w-12 h-12 bg-amber-700 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                RS</div>
+                            <div>
+                                <p class="font-bold text-gray-800">Ricardo Silva</p>
+                                <small class="text-sm text-gray-600">Paciente há 8 meses</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 6 -->
+                    <div class="mb-5 bg-gray-50 p-6 rounded-lg shadow-md testimonial-card relative">
+                        <div class="absolute -top-4 -left-4 text-6xl text-blue-100">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="text-gray-700 italic mb-6 relative">"A Dra. Nadia ajudou meu filho adolescente a
+                            superar
+                            sua timidez extrema. Hoje ele está mais confiante e sociável. Recomendo de coração!"</p>
+                        <div class="flex items-center">
+                            <div
+                                class="w-12 h-12 bg-rose-700 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                MA</div>
+                            <div>
+                                <p class="font-bold text-gray-800">Mariana Alves</p>
+                                <small class="text-sm text-gray-600">Mãe de paciente</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 7 -->
+                    <div class="mb-5 bg-gray-50 p-6 rounded-lg shadow-md testimonial-card relative">
+                        <div class="absolute -top-4 -left-4 text-6xl text-blue-100">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="text-gray-700 italic mb-6 relative">"Depois de anos sofrendo com síndrome do pânico,
+                            finalmente encontrei alívio com a terapia. A Dra. Nadia tem uma abordagem que realmente
+                            funciona."</p>
+                        <div class="flex items-center">
+                            <div
+                                class="w-12 h-12 bg-lime-700 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                FG</div>
+                            <div>
+                                <p class="font-bold text-gray-800">Fernanda Gomes</p>
+                                <small class="text-sm text-gray-600">Paciente há 1 ano</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 8 -->
+                    <div class="mb-5 bg-gray-50 p-6 rounded-lg shadow-md testimonial-card relative">
+                        <div class="absolute -top-4 -left-4 text-6xl text-blue-100">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="text-gray-700 italic mb-6 relative">"Como pessoa trans, encontrei na Dra. Nadia uma
+                            profissional que respeita minha identidade e me ajuda a lidar com os desafios emocionais da
+                            transição."</p>
+                        <div class="flex items-center">
+                            <div
+                                class="w-12 h-12 bg-indigo-700 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                AS</div>
+                            <div>
+                                <p class="font-bold text-gray-800">Alex Santos</p>
+                                <small class="text-sm text-gray-600">Paciente há 6 meses</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 9 -->
+                    <div class="mb-5 bg-gray-50 p-6 rounded-lg shadow-md testimonial-card relative">
+                        <div class="absolute -top-4 -left-4 text-6xl text-blue-100">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="text-gray-700 italic mb-6 relative">"A terapia me ajudou a superar uma depressão
+                            severa. A
+                            Dra. Nadia foi essencial nesse processo, com seu olhar atento e acolhedor."</p>
+                        <div class="flex items-center">
+                            <div
+                                class="w-12 h-12 bg-cyan-700 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                TC</div>
+                            <div>
+                                <p class="font-bold text-gray-800">Thiago Costa</p>
+                                <small class="text-sm text-gray-600">Paciente há 1 ano</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Perguntas Frequentes</h2>
+                    <div class="h-1 w-20 bg-purple-400 mx-auto mb-6"></div>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <button class="faq-btn flex justify-between items-center w-full text-left"
+                            onclick="toggleFAQ(1)" aria-label="botão do faq">
+                            <h3 class="font-bold text-lg text-gray-800">Por qual abordagem serei atendido se fizer
+                                terapia
+                                contigo?
+                            </h3>
+                            <i class="fas fa-plus text-purple-600"></i>
+                        </button>
+                        <div class="faq-content mt-4 hidden">
+                            <p class="text-gray-600">Dentro da formação em psicologia aprendemos diversas abordagens, ou
+                                seja, diversas teorias e formas diferentes de entender o ser humano. É importante ter em
+                                mente que não há uma abordagem "certa ou errada", "mais ou menos eficiente". O que
+                                ocorre é
+                                que cada pessoa responde de uma forma a cada uma.
+                                Minha abordagem de trabalho se chama Gestalt-terapia. Esta é uma linha de trabalho que
+                                dá
+                                muita importância a auto percepção, a consciência das próprias emoções e valoriza o
+                                olhar
+                                para o contexto completo do cliente, pois considera que cada pessoa é muito mais do que
+                                a
+                                soma das partes que a compõem.
+                                Se vamos tratar um conflito familiar, por exemplo, é importante investigar não apenas o
+                                que
+                                está diretamente relacionado ao conflito, mas todo o cenário: questões de trabalho, de
+                                saúde, valores pessoais etc, pois as diferentes instâncias de nossa vida (e das pessoas
+                                do
+                                nosso entorno) se influenciam mutuamente.
+                                Porém, mesmo que seja interessante saber a linha teórica do profissional que escolhemos,
+                                a
+                                relação terapêutica não depende apenas disto, mas de uma série de subjetividades.
+                                Portanto, a melhor forma de decidir por um profissional é entrando em contato e, se
+                                possível, realizando uma sessão para sentir a conexão entre vocês.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <button class="faq-btn flex justify-between items-center w-full text-left"
+                            onclick="toggleFAQ(2)" aria-label="botão do faq">
+                            <h3 class="font-bold text-lg text-gray-800">Qual a frequência e duração das sessões?</h3>
+                            <i class="fas fa-plus text-purple-600"></i>
+                        </button>
+                        <div class="faq-content mt-4 hidden">
+                            <p class="text-gray-600">As sessões têm duração de 50 minutos e, em geral, são realizadas
+                                semanalmente. Porém, em alguns casos podem ser feitas em maior ou menor frequência
+                                dependendo da necessidade.
+                                Sessões quinzenais podem ser bem-vindas quando se alcança um período de estabilidade nos
+                                conflitos, mas o cliente deseja seguir em seu acompanhamento.
+                                Da mesma forma, podem ser feitas mais de uma sessão semanal em momentos de sofrimento
+                                psíquico agudo ou demandas pontuais que requeiram mais atenção.
+                                Essa periodicidade será definida em parceria entre profissional e cliente.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <button class="faq-btn flex justify-between items-center w-full text-left"
+                            onclick="toggleFAQ(3)" aria-label="botão do faq">
+                            <h3 class="font-bold text-lg text-gray-800">Por quanto tempo ficarei em terapia?</h3>
+                            <i class="fas fa-plus text-purple-600"></i>
+                        </button>
+                        <div class="faq-content mt-4 hidden">
+                            <p class="text-gray-600">Não é possível prever o período de duração do processo terapêutico.
+                                Gosto de dizer que a terapia dura enquanto faz sentido para o cliente. Afinal, nossa
+                                vida é
+                                dinâmica e demandas vêm e vão o tempo todo e um dos principais objetivos da terapia é
+                                favorecer com que o indivíduo seja autônomo e capaz de tomar decisões - inclusive as
+                                referentes a seu acompanhamento psicológico.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <button class="faq-btn flex justify-between items-center w-full text-left"
+                            onclick="toggleFAQ(4)" aria-label="botão do faq">
+                            <h3 class="font-bold text-lg text-gray-800">Qual modalidade de atendimento mais
+                                recomendável:
+                                presencial ou online?
+                            </h3>
+                            <i class="fas fa-plus text-purple-600"></i>
+                        </button>
+                        <div class="faq-content mt-4 hidden">
+                            <p class="text-gray-600">Cada uma das modalidades tem suas particularidades e ambas são
+                                eficientes.
+                                A sessão presencial tem a vantagem de ser mais fluida, íntima e favorecer com que o
+                                cliente
+                                disponha de um ambiente neutro - o que muitas vezes favorece o diálogo sobre temas
+                                delicados
+                                e/ou traumáticos. Porém tem a desvantagem de demandar mais tempo, por conta do
+                                deslocamento
+                                até o consultório.
+                                Já a modalidade online oferece mais praticidade. Muitos clientes acabam preferindo
+                                realizar
+                                a sessão em sua casa por ser um ambiente familiar ou pela possibilidade de ter seu pet
+                                presente como apoio emocional, por exemplo.
+                                Também há quem opte pelo atendimento online pela possibilidade de realizar o atendimento
+                                em
+                                intervalos de trabalho.
+                                Independente da motivação, algo indispensável para uma sessão online eficiente é que a
+                                pessoa esteja em ambiente tranquilo que possibilite o foco na sessão sem interrupções e
+                                sem
+                                preocupação com a privacidade - questões que acabam sendo desvantagens desta modalidade.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <button class="faq-btn flex justify-between items-center w-full text-left"
+                            onclick="toggleFAQ(5)" aria-label="botão do faq">
+                            <h3 class="font-bold text-lg text-gray-800">Como saber se preciso de terapia neste momento?
+                            </h3>
+                            <i class="fas fa-plus text-purple-600"></i>
+                        </button>
+                        <div class="faq-content mt-4 hidden">
+                            <p class="text-gray-600">Existe uma ideia muito difundida atualmente de que "todos devemos
+                                fazer
+                                terapia", porém concordo com esta afirmação apenas em partes.
+                                Defendo que a terapia seja um espaço de reflexão, resolução de problemas, aceitação de
+                                contextos e celebração de conquistas.
+                                Porém, isso só é possível quando há uma decisão em primeira pessoa por este caminho. Ou
+                                seja, se a razão pela qual você está considerando iniciar os atendimentos for "porque
+                                alguém
+                                mandou ou te pressionou a isso" talvez ainda não seja a hora pra você.
+                                Uma terapia proveitosa requer entrega e compromisso. O que, por sua vez, só acontece
+                                quando
+                                entramos no processo por escolha própria.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Scheduling Section -->
+        <section id="scheduling" class="bg-gray-100 py-10 px-4 min-h-screen flex flex-col items-center">
+            <div class="w-full max-w-3xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Agende sua consulta</h2>
+                    <div class="h-1 w-20 bg-purple-400 mx-auto mb-6"></div>
+                </div>
+
+                <div id="calendario" class="bg-white p-2 md:p-4 rounded-lg shadow mb-6"></div>
+                <input type="hidden" id="data" />
+
+                <div class="mb-10">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-2">Horários Disponíveis</h3>
+                    <div id="loadingHorarios" class="text-center my-4 hidden">
+                        <i class="fas fa-spinner fa-spin text-purple-600 text-2xl"></i>
+                        <p class="text-gray-600 mt-2">Carregando horários disponíveis...</p>
+                    </div>
+                    <div id="horarios" class="grid grid-cols-3 sm:grid-cols-4 gap-3"></div>
+                    <input type="hidden" id="horarioSelecionado" />
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <form id="form-agendamento" class="space-y-4">
+                        <input type="text" id="nome" placeholder="Nome completo" required
+                            class="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-300 focus:border-indigo-500">
+                        <input type="email" id="email" placeholder="E-mail" required
+                            class="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-300 focus:border-indigo-500">
+                        <input type="tel" id="telefone" placeholder="Telefone" required
+                            class="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-300 focus:border-indigo-500">
+                        <textarea id="obs" placeholder="Observações (opcional)"
+                            class="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-300 focus:border-indigo-500"></textarea>
+
+                        <button type="submit" id="botaoAgendar"
+                            class="w-full bg-indigo-600 text-white py-3 rounded-md hover:bg-indigo-700 font-medium transition focus:outline-none">
+                            Confirmar Agendamento
+                        </button>
+                        <div id="loadingSubmit" class="text-center mt-4 hidden">
+                            <i class="fas fa-spinner fa-spin text-purple-600 text-2xl"></i>
+                            <p class="text-gray-600 mt-2">Enviando dados do agendamento...</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gradient-to-br from-primary to-secondary text-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 mb-10 md:mb-0">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">Entre em Contato</h2>
+                        <div class="h-1 w-20 bg-white mb-6"></div>
+                        <p class="mb-8">Estou aqui para te ajudar. Tem alguma dúvida, me mande uma mensagem que eu
+                            estarei a
+                            sua disposição! </p>
+
+                        <div class="flex items-start mb-6">
+                            <div class="text-xl mr-4 mt-1">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold">Telefone</p>
+                                <a href="https://wa.me/5511986714867?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta."
+                                    aria-label="botao para entrar em contato via whatsApp">
+                                    <p class="hover:bg-primary hover:px-4 rounded-full transition duration-300">(11) 9
+                                        8671-4867</p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start mb-6">
+                            <div class="text-xl mr-4 mt-1">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold">E-mail</p>
+                                <p>nabsophos@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-4 mt-8">
+                            <a href="https://wa.me/5511986714867?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta."
+                                target="_blank" aria-label="Link para acesso ao whatsApp da Dr. Nadia Barbosa"
+                                class="bg-white shadow-md text-purple-700 hover:bg-purple-200 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://www.instagram.com/nadiabarbosa.psi/" target="_blank"
+                                aria-label="Link para acesso ao instagram da Dr. Nadia Barbosa"
+                                class="bg-white text-purple-700 hover:bg-purple-100 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <form id="contactForm" class="bg-white text-gray-800 p-8 rounded-lg shadow-lg">
+                            <h3 class="text-2xl font-bold mb-6">Agende sua consulta</h3>
+
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-bold mb-2">Nome</label>
+                                <input type="text" id="name" name="name" placeholder="Nome completo"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-700"
+                                    required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-bold mb-2">E-mail</label>
+                                <input type="email" id="email" name="email" placeholder="seuemail@gmail.com"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-700"
+                                    required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 font-bold mb-2">Assunto</label>
+                                <input type="text" id="subject" name="subject" placeholder="Assunto"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-700"
+                                    required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 font-bold mb-2">Telefone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-700"
+                                    required>
+                            </div>
+
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-bold mb-2">Mensagem</label>
+                                <textarea id="message" name="message" rows="4"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-700"
+                                    placeholder="Digite sua mensagem aqui" required></textarea>
+                            </div>
+
+                            <input type="hidden" name="to_email" value="nabsophos@gmail.com">
+
+                            <button type="submit"
+                                class="w-full bg-purple-700 hover:bg-primary text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                                Enviar Dúvida
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-around">
+                <div class="mb-8 md:mb-0">
+                    <img src="src/arq/img/3.png" width="200" height="100" alt="Logo Psicóloga Nadia Barbosa">
+                    <p class="mb-2">Seu caminho para o bem-estar emocional</p>
+                    <p>CRP 06/ 106745</p>
+                </div>
+
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">Links rápidos</h3>
+                    <ul class="flex flex-col">
+                        <li class="mb-2 md:mb-0"><a href="#home" class="hover:text-purple-300 transition duration-300 mb-2"
+                                aria-label="item de menu">Início</a></li>
+                        <li class="mb-2 md:mb-0"><a href="#about" class="hover:text-purple-300 transition duration-300 mb-2"
+                                aria-label="item de menu">Sobre Mim</a>
+                        </li>
+                        <li class="mb-2 md:mb-0"><a href="#services" class="hover:text-purple-300 transition duration-300 mb-2"
+                                aria-label="item de menu">Serviços</a>
+                        </li>
+                        <li class="mb-2 md:mb-0"><a href="#depositions" class="hover:text-purple-300 transition duration-300 mb-2"
+                                aria-label="item de menu">Depoimentos</a></li>
+                        <li class="mb-2 md:mb-0"><a href="#faq" class="hover:text-purple-300 transition duration-300 mb-2"
+                                aria-label="item de menu">Perguntas
+                                Frequentes</a></li>
+                        <li class="mb-2 md:mb-0"><a href="#contact" class="hover:text-purple-300 transition duration-300"
+                                aria-label="item de menu">Agendar
+                                Consulta</a></li>
+                    </ul>
+                </div>
+
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">Horário de Atendimento</h3>
+                    <p class="mb-1">Segunda à Sexta: 10h às 18h</p>
+                    <p>Sábado: 10h às 14h</p>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p>&copy; 2025 Dra. Nadia Barbosa | Todos os direitos reservados</p>
+                <p class="mt-2 text-sm text-gray-400">Desenvolvido com ❤️ para sua saúde emocional</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/5511986714867?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta." target="_blank"
+        aria-label="link para encaminhamento para o whatsApp">
+        <button class="fixed bottom-8 right-8 bg-green-600 text-white rounded-full shadow-xl z-50 whatsapp-btn"
+            aria-label="Botão que da acesso ao whatsApp da Dr. Nadia Barbosa">
+            <i class="fab fa-whatsapp text-4xl"></i>
+        </button>
+    </a>
+    <!-- Modal de Sucesso -->
+    <div class="modal fade" id="modalSucesso" tabindex="-1" aria-labelledby="modalSucessoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+                <div class="modal-header bg-purple-400 text-white text-center">
+                    <h5 class="modal-title" id="modalSucessoLabel">Agendamento Confirmado</h5>
+                </div>
+                <div class="modal-body py-4">
+                    <p>Seu agendamento foi realizado com sucesso! 📅</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn bg-purple-400 hover:bg-purple-500 text-white" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Geral -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // FAQ toggle function
+        function toggleFAQ(num) {
+            const btn = document.querySelectorAll('.faq-btn')[num - 1];
+            const content = document.querySelectorAll('.faq-content')[num - 1];
+            const icon = btn.querySelector('i');
+
+            content.classList.toggle('hidden');
+
+            if (content.classList.contains('hidden')) {
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+            } else {
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            }
+        }
+
+        // Botão Voltar ao Topo
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <!-- Calendario -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzBMZTP4nXekHNAzF29M2J3_1VnoRBHhd8rsZxBQeEEcddIkitkdb5895qxgdpTDJYy/exec';
+        let horariosOcupados = [];
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const calendarEl = document.getElementById('calendario');
+
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                locale: 'pt-br',
+                selectable: true,
+                datesSet: () => marcarDiasInativos(),
+                dateClick: async function (info) {
+                    const hoje = dayjs().format('YYYY-MM-DD');
+                    const selecionada = info.dateStr;
+                    const diaSemana = dayjs(selecionada).day();
+
+                    if (dayjs(selecionada).isBefore(hoje) || diaSemana === 0) return;
+
+                    document.getElementById('data').value = selecionada;
+                    document.querySelectorAll('.fc-daygrid-day').forEach(el => el.classList.remove('fc-day-selected'));
+                    info.dayEl.classList.add('fc-day-selected');
+
+                    await gerarHorarios(selecionada);
+                }
+            });
+
+            calendar.render();
+        });
+
+        function marcarDiasInativos() {
+            const hoje = dayjs().format('YYYY-MM-DD');
+            const dias = document.querySelectorAll('.fc-daygrid-day');
+
+            dias.forEach(dia => {
+                const data = dia.getAttribute('data-date');
+                const diaSemana = dayjs(data).day();
+
+                if (!data) return;
+
+                if (dayjs(data).isBefore(hoje) || diaSemana === 0) {
+                    dia.classList.add('fc-day-disabled');
+                }
+            });
+        }
+
+        async function gerarHorarios(dataSelecionada) {
+            const container = document.getElementById('horarios');
+            const loading = document.getElementById('loadingHorarios');
+
+            container.innerHTML = '';
+            loading.classList.remove('hidden');
+
+            const horarios = [];
+            const diaSemana = dayjs(dataSelecionada).day();
+            const inicio = 10;
+            const fim = diaSemana === 6 ? 14 : 18;
+
+            for (let h = inicio; h < fim; h++) {
+                horarios.push(`${h.toString().padStart(2, '0')}:00`);
+            }
+
+            try {
+                const response = await fetch(scriptURL);
+                const agendados = await response.json();
+                horariosOcupados = agendados
+                    .filter(ev => ev.data === dataSelecionada)
+                    .map(ev => ev.hora);
+            } catch (err) {
+                console.error("Erro ao buscar agendados:", err);
+                container.innerHTML = "<p class='text-danger'>Erro ao carregar horários.</p>";
+                loading.classList.add('hidden');
+                return;
+            }
+
+            horarios.forEach(hora => {
+                const btn = document.createElement('button');
+                btn.textContent = hora;
+                btn.type = 'button';
+
+                const bloqueado = horariosOcupados.includes(hora);
+                btn.className = bloqueado
+                    ? 'btn btn-outline-danger btn-sm m-1'
+                    : 'btn btn-outline-success btn-sm m-1';
+
+                if (!bloqueado) {
+                    btn.onclick = () => {
+                        document.getElementById('horarioSelecionado').value = hora;
+                        document.querySelectorAll('#horarios button').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                    };
+                } else {
+                    btn.disabled = true;
+                }
+
+                container.appendChild(btn);
+            });
+
+            loading.classList.add('hidden');
+        }
+
+        document.getElementById("form-agendamento").addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const nome = document.getElementById("nome").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const telefone = document.getElementById("telefone").value.trim();
+            const data = document.getElementById("data").value;
+            const hora = document.getElementById("horarioSelecionado").value;
+            const observacoes = document.getElementById("obs").value.trim();
+
+            if (!nome || !email || !telefone || !data || !hora) {
+                alert("Por favor, preencha todos os campos obrigatórios e selecione uma data e horário.");
+                return;
+            }
+
+            const formData = new URLSearchParams();
+            formData.append("nome", nome);
+            formData.append("email", email);
+            formData.append("telefone", telefone);
+            formData.append("data", data);
+            formData.append("hora", hora);
+            formData.append("observacoes", observacoes);
+
+            const btn = document.querySelector('#form-agendamento button[type="submit"]');
+            const loading = document.getElementById("loadingSubmit");
+
+            btn.disabled = true;
+            loading.classList.remove("hidden");
+
+            try {
+                const res = await fetch(scriptURL, {
+                    method: "POST",
+                    body: formData,
+                });
+
+                const respostaTexto = await res.text();
+
+                if (respostaTexto.includes("Horário já está ocupado")) {
+                    alert("Esse horário já foi agendado. Por favor, escolha outro.");
+                } else if (respostaTexto.includes("Agendado com sucesso")) {
+                    // Oculta o loader antes de abrir o modal
+                    loading.classList.add("hidden");
+
+                    // Exibe o modal de sucesso
+                    const modal = new bootstrap.Modal(document.getElementById('modalSucesso'));
+                    modal.show();
+
+                    // Limpa o formulário
+                    document.getElementById("form-agendamento").reset();
+                    document.getElementById("horarios").innerHTML = "";
+                    document.getElementById("data").value = "";
+                    document.getElementById("horarioSelecionado").value = "";
+                } else {
+                    alert("Erro inesperado: " + respostaTexto);
+                }
+            } catch (err) {
+                console.error("Erro ao enviar formulário:", err);
+                alert("Erro ao tentar agendar. Tente novamente mais tarde.");
+            } finally {
+                btn.disabled = false;
+                loading.classList.add("hidden");
+            }
+        });
+
+    </script>
+    <!-- EmailJS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            emailjs.init("Nl1pSehQMNTqbt0ib");
+
+            const form = document.getElementById("contactForm");
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+                const values = {};
+                formData.forEach((value, key) => {
+                    values[key] = value;
+                });
+
+                console.log("🟡 Dados capturados:", values);
+
+                emailjs.sendForm("service_9i6r5en", "template_qb418zc", form)
+                    .then(() => {
+                        alert("Enviado com sucesso!");
+                        form.reset();
+                    })
+                    .catch((error) => {
+                        console.error("❌ Erro:", error);
+                        alert("Erro ao enviar.");
+                    });
+            });
+        });
+    </script>
+    <!-- Bootstrap JS (no final do body) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
